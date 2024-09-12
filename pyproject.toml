@@ -1,3 +1,6 @@
 [tool.pyright]
 venv = ".venv"
 venvPath = "."
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
