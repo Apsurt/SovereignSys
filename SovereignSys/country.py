@@ -1,12 +1,16 @@
 import os
 
+import requests
 from fastapi import status
 from fastapi.responses import JSONResponse
 from .app_builder import app
 from .data_models import Country
+from .citizen import create_citizen
 
 @app.post("/country/create")
 async def create_country(country: Country, idx: int = 0):
+    for citizen in country.citizens:
+        await create_citizen(citizen)
     with open(f"SovereignSys/countries/country{idx}.json", "w") as f:
         f.write(country.model_dump_json(indent=2))
     return country
