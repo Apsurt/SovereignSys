@@ -33,11 +33,12 @@ async def get_citizen(idx: int = None, pn: int = None):
     if not argument_exists:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"response": "No arguments passed. Check docs."})
     
+    path = f"SovereignSys/citizens"  #CHANGE THIS WHEN MOVING TO DB
     #find by idx
     if not idx is None:
-        path = f"SovereignSys/citizens/"  #CHANGE THIS WHEN MOVING TO DB
-        if os.path.exists(path + "citizen{idx}.json"):
-            with open(path, "r") as f:
+        file_path = path + f"/citizen{idx}.json"
+        if os.path.exists(file_path):
+            with open(file_path, "r") as f:
                 citizen = Citizen.model_validate_json(f.read())
                 return citizen
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"response": f"Citizen with index {idx} doesn't exist."})
@@ -45,9 +46,9 @@ async def get_citizen(idx: int = None, pn: int = None):
     #find by personal number
     if not pn is None:
         for citizen_path in os.listdir(path): #CHANGE THIS WHEN MOVING TO DB
-            with open(citizen_path, "r") as f:
+            with open(os.path.join(path, citizen_path), "r") as f:
                 citizen = Citizen.model_validate_json(f.read())
-            if citizen.personal_number == pn:
+            if int(citizen.personal_number) == pn:
                 return citizen
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"response": f"Citizen with personal number {pn} doesn't exist."})
     
