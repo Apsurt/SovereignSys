@@ -10,8 +10,9 @@ class Citizen(BaseModel):
     name: str
     sex: str
     birth: Date
-    personal_number: int
-    passport_number: int
+    job: str
+    personal_number: str
+    passport_number: str
 
 class Country(BaseModel):
     name: str
