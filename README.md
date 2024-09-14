@@ -83,6 +83,12 @@ This is a project for demonstration purposes. However, if you'd like to expand o
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Acknowledgements
+
+- List of names and surnames: [zeraye](https://github.com/zeraye/names-surnames-list)
+- List of countries: [claude.ai](https://claude.ai/)
+- List of jobs [Will St. Clair](https://gist.github.com/wsc/1083459)
+
 ## Contact
 
 If you have any questions or feedback, please open an issue in this repository.
