@@ -1,6 +1,5 @@
 import requests
 from SovereignSys import Country, Citizen, Date
-from datetime import date
 
 def test_create_country():
     citizen = Citizen(name="Cookie Monster", sex="Male", birth=Date(year=1969, month=11, day=10), job="Cookie Eater", personal_number="0", passport_number="0")
