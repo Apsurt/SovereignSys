@@ -4,10 +4,12 @@
 
 The SovereignSys API is a project that simulates the management of a micronation. This FastAPI-based application provides endpoints for citizen registration, passport issuance, law creation, and more. It's designed to showcase how a RESTful API can be used to manage the complex operations of a small, self-declared nation.
 
-## Features
+## Features (When Finished)
 
+- Country creation: Create multiple countries to simulate your world
 - Citizen Registry: Register and manage citizens
 - Virtual Passport System: Issue and verify digital passports
+- Economy System: Create currencies and markets
 - Legal Framework: Create and store laws
 
 ## Prerequisites
@@ -49,12 +51,12 @@ To run the API locally:
 
 3. Access the interactive API documentation at `http://localhost:8000/docs`
 
-## API Endpoints
+## API Example Endpoints
 
 - `POST /`: 
 - `GET /`: 
 
-For detailed information on request/response formats, please refer to the API documentation at `/docs` when the server is running.
+For full documentation on request/response formats, please refer to the API documentation at `/docs` when the server is running.
 
 ## Example Usage
 
@@ -62,17 +64,17 @@ Here's a quick example of how to use the API with curl:
 
 1. Create a new citizen:
    ```
-   curl -X POST "http://localhost:8000/citizens/?name=John%20Doe"
+   curl -X POST "http://localhost:8000/"
    ```
 
-2. Issue a passport (replace `{citizen_id}` with the ID returned from the previous request):
+2. Issue a passport:
    ```
-   curl -X POST "http://localhost:8000/passports/?citizen_id={citizen_id}"
+   curl -X POST "http://localhost:8000/"
    ```
 
 3. Create a new law:
    ```
-   curl -X POST "http://localhost:8000/laws/?title=Freedom%20of%20Speech&content=All%20citizens%20have%20the%20right%20to%20free%20speech"
+   curl -X POST "http://localhost:8000/"
    ```
 
 ## Contributing
