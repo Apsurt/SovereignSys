@@ -1,4 +1,4 @@
-from SovereignSys import Country, Citizen, Date, country
+from SovereignSys import Country, Citizen, Date
 
 date = Date(year=2001, month=5, day=18)
 citizen = Citizen(name="Shrek", sex="Male", birth=date, job="Swamp Tester", personal_number="0", passport_number="0")
